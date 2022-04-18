@@ -1,0 +1,126 @@
+import java.util.*;
+class Bank
+
+{
+	static int bls=15000;
+	static void credit(int amount)
+	{
+		bls=bls+amount;
+		System.out.println("Your amount"+" "+amount+"  "+  "successfully credited.....");
+	}
+	static void debite(int amount)
+	{
+		if(amount>bls){
+			System.out.println("Insufficient Balance");
+			System.out.println("Try again....");
+		}
+		else{
+			bls=bls-amount;
+			System.out.println("Your amount "+" "+amount+"  "+ "successfully debited......");
+
+		}
+	}
+	static void checkbls()
+	{
+		System.out.println("Your Account Balance"+bls);
+		
+	}
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		int choice,upi,amt;
+       System.out.println("1. Phonepay \n 2. GooglePay \n 3. AmazonPay \n 4. Paytm \n Choose any one:");
+	    
+		upi = sc.nextInt();
+
+		switch(upi)
+		{
+			case 1:System.out.println("**********************Phonepay*********************");
+				   
+		System.out.println("1. credit\n 2. debite \n 3. Check Balance \n");
+		
+		do{
+		System.out.println("Choose One:");
+		choice=sc.nextInt();
+
+		switch(choice){
+			case 1: System.out.println("Enter an amount");
+					amt=sc.nextInt();
+					credit(amt);
+					break;
+			case 2: System.out.println("Enter an amount");
+			        amt=sc.nextInt();
+					debite(amt);
+					break;
+			case 3: checkbls(); break;
+		}
+		}while (choice<4);break;
+		 
+		 case 2:System.out.println("**************************GooglePay*************************");
+		 		
+		System.out.println("1. credit\n 2. debite \n 3. Check Balance \n");
+		
+		do{
+		System.out.println("Choose One:");
+		choice=sc.nextInt();
+
+		switch(choice){
+			case 1: System.out.println("Enter an amount");
+					amt=sc.nextInt();
+					credit(amt);
+					break;
+			case 2: System.out.println("Enter an amount");
+			        amt=sc.nextInt();
+					debite(amt);
+					break;
+			case 3: checkbls(); break;
+		}
+		}while (choice<4);break;
+
+		case 3: System.out.println("**********************Paytm*********************************");
+				
+		System.out.println("1. credit\n 2. debite \n 3. Check Balance \n");
+		
+		do{
+		System.out.println("Choose One:");
+		choice=sc.nextInt();
+
+		switch(choice){
+			case 1: System.out.println("Enter an amount");
+					amt=sc.nextInt();
+					credit(amt);
+					break;
+			case 2: System.out.println("Enter an amount");
+			        amt=sc.nextInt();
+					debite(amt);
+					break;
+			case 3: checkbls(); break;
+		}
+		}while (choice<4); break;
+		case 4:System.out.println("****************************AmazonPay***************************");
+		
+		System.out.println("1. credit\n 2. debite \n 3. Check Balance \n");
+		
+		do{
+		System.out.println("Choose One:");
+		choice=sc.nextInt();
+
+		switch(choice){
+			case 1: System.out.println("Enter an amount");
+					amt=sc.nextInt();
+					credit(amt);
+					break;
+			case 2: System.out.println("Enter an amount");
+			        amt=sc.nextInt();
+					debite(amt);
+					break;
+			case 3: checkbls(); break;
+		}
+		}while (choice<4);break;
+		default: System.out.println("Invalid Payment Method");
+		}
+
+		
+
+	}
+}
